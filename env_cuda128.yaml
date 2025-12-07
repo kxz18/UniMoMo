@@ -1,0 +1,39 @@
+name: UniMoMo
+channels:
+  - pytorch
+  - nvidia
+  - bioconda
+  - conda-forge
+  - pyg
+  - defaults
+dependencies:
+  - python=3.9
+  - bioconda::anarci
+  - biopython=1.80
+  - scikit-learn
+  - scipy
+  - pandas
+  - tensorboard=2.12.1
+  - mmseqs2
+  - openmm
+  - openbabel
+  - pdbfixer
+  - pip
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu128
+    - --find-links https://data.pyg.org/whl/torch-2.8.0+cu128.html
+    # standard packages
+    - DockQ==2.1.3
+    - rdkit-pypi==2022.3.5
+    - biotite==0.40.0
+    - tqdm
+    - easydict
+    - wandb
+    - sympy
+    - packaging # for torch.utils.tensorboard
+    - networkx
+    - ray
+    # packages from extra index
+    - torch==2.8.0+cu128
+    # packages from find-links
+    - torch-scatter==2.1.2

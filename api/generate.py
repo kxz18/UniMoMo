@@ -201,7 +201,7 @@ def main(args, opt_args):
     # load model
     ckpt = args.ckpt
     print_log(f'Using checkpoint {ckpt}')
-    model = torch.load(ckpt, map_location='cpu')
+    model = torch.load(ckpt, map_location='cpu', weights_only=False)
     device = torch.device('cpu' if args.gpu == -1 else f'cuda:{args.gpu}')
     model.to(device)
     model.eval()
